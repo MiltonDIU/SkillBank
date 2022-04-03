@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillBank</title>
+
+    <link rel="shortcut icon" href="images/skillbank_logo.png" type="image/x-icon">
+
+    <!-- Google Fonts Start -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Google Fonts End -->
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- --------------------------------- Header Start --------------------------------- -->
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 xs_header_left">
+                    <div class="header_logo">
+                        <img src="images/skillbank_logo.png" alt="SkillBank">
+                    </div>
+                </div>
+
+                <div class="col-lg-6 xs_header_right">
+                    <div class="header_left">
+                        <div class="search">
+                            <input type="text" placeholder="Search">
+
+                            <div class="search_icon">
+                                <i class="bi bi-search search_i"></i>
+                            </div>
+                        </div>
+
+                        <div class="header_btn">
+                            <div class="dropdown">
+                                <a class="btn_light dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="bi bi-grid-fill"></i>
+                                </a>
+                              
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    <li><a class="dropdown-item" href="#">Login</a></li>
+                                    <li><a class="dropdown-item" href="#">Students\Graduate\Professional</a></li>
+                                    <li><a class="dropdown-item" href="#">Academic Institutes</a></li>
+                                    <li><a class="dropdown-item" href="#">Vendors</a></li>
+                                    <li><a class="dropdown-item" href="#">Verifier</a></li>
+                                    <li><a class="dropdown-item" href="#">Industry/Employer</a></li>
+                                    <li><a class="dropdown-item" href="#">Industry Body</a></li>
+                                    <li><a class="dropdown-item" href="#">Guild/Boards</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- --------------------------------- Header End --------------------------------- -->
+
+    <!-- --------------------------------- Navbar Start --------------------------------- -->
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light shadow">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="bi bi-list"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            About Us
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-start" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item item-one" href="#">Preface and Overview</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Services
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-start" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Features</a></li>
+                            <li><a class="dropdown-item" href="#">Benefits</a></li>
+                            <li><a class="dropdown-item" href="#">Process</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Operation Framework
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-start" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Credit Conversion</a></li>
+                            <li><a class="dropdown-item" href="#">Credit Exemptions</a></li>
+                            <li><a class="dropdown-item" href="#">Credit Transfer/Replacement</a></li>
+                            <li><a class="dropdown-item" href="#">Credit Equivalence</a></li>
+                            <li><a class="dropdown-item" href="#">Skill Audit and Redemption</a></li>
+                            <li><a class="dropdown-item" href="#">Skill Endorsement</a></li>
+                            <li><a class="dropdown-item" href="#">Skill Authenticate</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Resources & Applications
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-start" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">General Resources</a></li>
+                            <li><a class="dropdown-item" href="#">Credit Templates & Guideline</a></li>
+                            <li><a class="dropdown-item" href="#">Career Resources</a></li>
+                            <li><a class="dropdown-item" href="#">Skill Resources</a></li>
+                            <li><a class="dropdown-item" href="#">Data Definition Document</a></li>
+                            <li><a class="dropdown-item" href="#">Mobile Apps</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Career Essentials
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-start" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Technical & Vocational</a></li>
+                            <li><a class="dropdown-item" href="#">HE Institutions</a></li>
+                            <li><a class="dropdown-item" href="#">Professional & Ventor Certifications</a></li>
+                            <li><a class="dropdown-item" href="#">Local & International Industries</a></li>
+                            <li><a class="dropdown-item" href="#">SKills Framework</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- --------------------------------- Navbar End --------------------------------- -->
+
+    <!-- --------------------------------- Banner Start --------------------------------- -->
+    <section id="main_banner">
+        <div class="swiper banner_swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide banner-slide">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="banner_content">
+                                    <p class="text_red mb-20">Skill Bank for Academic Credits (SBAC)</p>
+            
+                                    <h1 class="heading_one mb-100">Solution for Skills and credits assessment</h1>
+            
+                                    <div class="banner_btns">
+                                        <a href="#" class="btn_red">Get Started</a>
+                                        <a href="#" class="btn_blue">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 xs-banner-img">
+                                <div class="banner_img">
+                                    <div class="img_box">
+                                        <img src="images/banner_img_1.png" alt="Skill Bank">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide banner-slide">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="banner_content">
+                                    <p class="text_red mb-20">Skill Bank for Academic Credits (SBAC)</p>
+            
+                                    <h1 class="heading_one mb-100">Facilitate lifelong learning for all</h1>
+            
+                                    <div class="banner_btns">
+                                        <a href="#" class="btn_red">Get Started</a>
+                                        <a href="#" class="btn_blue">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 xs-banner-img">
+                                <div class="banner_img">
+                                    <div class="img_box">
+                                        <img src="images/banner_img_2.png" alt="Skill Bank">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide banner-slide">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="banner_content">
+                                    <p class="text_red mb-20">Skill Bank for Academic Credits (SBAC)</p>
+            
+                                    <h1 class="heading_one mb-100">Facility to promote academic flexibility</h1>
+            
+                                    <div class="banner_btns">
+                                        <a href="#" class="btn_red">Get Started</a>
+                                        <a href="#" class="btn_blue">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 xs-banner-img">
+                                <div class="banner_img">
+                                    <div class="img_box">
+                                        <img src="images/banner_img_3.png" alt="Skill Bank">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+    <!-- --------------------------------- Banner End --------------------------------- -->
+
+    <!-- --------------------------------- About End --------------------------------- -->
+
+    <section id="about_part" class="section_padding section_gradient">
+        <div class="container">
+            <div class="row justify_content">
+                <div class="col-lg-6 xs-about-title">
+                    <div class="section_title">
+                        <p class="text_red mb-16" data-aos="fade-up" data-aos-delay="100">SBAC</p>
+                        <h2 class="heading_one text_blue" data-aos="fade-up" data-aos-delay="100">About Us</h2>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 xs-about-btn">
+                    <div class="section_btn" data-aos="fade-up" data-aos-delay="100">
+                        <a href="#" class="btn_light">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section_content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4" data-aos="fade-up" data-aos-delay="400">
+                        <div class="content_box">
+                            <div class="content_title mb-50">
+                                <div class="c_icon">
+                                    <i class="bi bi-gear-fill"></i>
+                                </div>
+
+                                <div class="c_text">
+                                    <h3 class="c_heading">Features</h3>
+                                </div>
+                            </div>
+
+                            <div class="content_details">
+                                <p>A viable and unique business model of transnational education that will promote student centricity.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4" data-aos="fade-up" data-aos-delay="600">
+                        <div class="content_box">
+                            <div class="content_title mb-50">
+                                <div class="c_icon">
+                                    <i class="bi bi-clipboard2-check-fill"></i>
+                                </div>
+
+                                <div class="c_text">
+                                    <h3 class="c_heading">Benefits</h3>
+                                </div>
+                            </div>
+
+                            <div class="content_details">
+                                <p>SBAC permits students to choose their own pace and associated logistics and costs for their studies.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4" data-aos="fade-up" data-aos-delay="800">
+                        <div class="content_box">
+                            <div class="content_title mb-50">
+                                <div class="c_icon">
+                                    <i class="bi bi-lightbulb-fill"></i>
+                                </div>
+
+                                <div class="c_text">
+                                    <h3 class="c_heading">Process</h3>
+                                </div>
+                            </div>
+
+                            <div class="content_details">
+                                <p>Facilitates lifelong learning for all, including informal students through helping acquire the right foundations.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- --------------------------------- About End --------------------------------- -->
+
+    <!-- --------------------------------- Service Start --------------------------------- -->
+
+    <section id="service_part" class="section_padding section_gradient">
+        <div class="container service_container">
+            <div class="section_title">
+                <p class="text_red mb-16" data-aos="fade-up" data-aos-delay="100">SBAC</p>
+                <h2 class="heading_one text_blue" data-aos="fade-up" data-aos-delay="100">Services</h2>
+            </div>
+
+            <div class="service_content" data-aos="fade-up" data-aos-delay="100">
+                <div class="swiper service_swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="content_box">
+                                <div class="content_title mb-50">
+                                    <div class="c_icon">
+                                        <h4 class="service_number">1</h4>
+                                    </div>
+    
+                                    <div class="c_text">
+                                        <h3 class="c_heading">Credit Conversion</h3>
+                                    </div>
+                                </div>
+    
+                                <div class="content_details">
+                                    <p>Helps students to move between countries and to have their academic qualifications and study periods abroad recognised.</p>
+                                </div>
+
+                                <div class="content_btn">
+                                    <a href="#" class="btn_light">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="content_box">
+                                <div class="content_title mb-50">
+                                    <div class="c_icon">
+                                        <h4 class="service_number">2</h4>
+                                    </div>
+    
+                                    <div class="c_text">
+                                        <h3 class="c_heading">Credit Exemptions</h3>
+                                    </div>
+                                </div>
+    
+                                <div class="content_details">
+                                    <p>The transfer of credits awarded to a student during the admission process based on previous qualification approved by the University.</p>
+                                </div>
+
+                                <div class="content_btn">
+                                    <a href="#" class="btn_light">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="content_box">
+                                <div class="content_title mb-50">
+                                    <div class="c_icon">
+                                        <h4 class="service_number">3</h4>
+                                    </div>
+    
+                                    <div class="c_text">
+                                        <h3 class="c_heading">Credit Transfer</h3>
+                                    </div>
+                                </div>
+    
+                                <div class="content_details">
+                                    <p>A term used by universities and colleges for students who want to learn or experience new subjects during their education time.</p>
+                                </div>
+
+                                <div class="content_btn">
+                                    <a href="#" class="btn_light">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="content_box">
+                                <div class="content_title mb-50">
+                                    <div class="c_icon">
+                                        <h4 class="service_number">4</h4>
+                                    </div>
+    
+                                    <div class="c_text">
+                                        <h3 class="c_heading">Credit Equivalence</h3>
+                                    </div>
+                                </div>
+    
+                                <div class="content_details">
+                                    <p>Helps students to move between countries and to have their academic qualifications and study periods abroad recognised.</p>
+                                </div>
+
+                                <div class="content_btn">
+                                    <a href="#" class="btn_light">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="content_box">
+                                <div class="content_title mb-50">
+                                    <div class="c_icon">
+                                        <h4 class="service_number">5</h4>
+                                    </div>
+    
+                                    <div class="c_text">
+                                        <h3 class="c_heading">Skills Audit</h3>
+                                    </div>
+                                </div>
+    
+                                <div class="content_details">
+                                    <p>Helps students to move between countries and to have their academic qualifications and study periods abroad recognised.</p>
+                                </div>
+
+                                <div class="content_btn">
+                                    <a href="#" class="btn_light">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="content_box">
+                                <div class="content_title mb-50">
+                                    <div class="c_icon">
+                                        <h4 class="service_number">6</h4>
+                                    </div>
+    
+                                    <div class="c_text">
+                                        <h3 class="c_heading">Skills Endorsement</h3>
+                                    </div>
+                                </div>
+    
+                                <div class="content_details">
+                                    <p>Helps students to move between countries and to have their academic qualifications and study periods abroad recognised.</p>
+                                </div>
+
+                                <div class="content_btn">
+                                    <a href="#" class="btn_light">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="content_box">
+                                <div class="content_title mb-50">
+                                    <div class="c_icon">
+                                        <h4 class="service_number">7</h4>
+                                    </div>
+    
+                                    <div class="c_text">
+                                        <h3 class="c_heading">Skills Authenticate</h3>
+                                    </div>
+                                </div>
+    
+                                <div class="content_details">
+                                    <p>Helps students to move between countries and to have their academic qualifications and study periods abroad recognised.</p>
+                                </div>
+
+                                <div class="content_btn">
+                                    <a href="#" class="btn_light">Learn More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- --------------------------------- Service End --------------------------------- -->
+
+    <!-- --------------------------------- Virtual Tour Start --------------------------------- -->
+
+    <section id="virtual_tour">
+        
+        <div class="virtual_content">
+            <p class="text_white mb-16" data-aos="fade-up" data-aos-delay="100">Lets’ Have A Quick Virtual Tour</p>
+            <h5 class="heading_one mb-20" data-aos="fade-up" data-aos-delay="300">How We Work</h5>
+        </div>
+
+        <div class="virtual_modal">
+            <!-- Button trigger modal -->
+            <button type="button" class="play_btn" data-bs-toggle="modal" data-bs-target="#exampleModal" data-aos="fade-up" data-aos-delay="400">
+                <i class="bi bi-play-fill"></i>
+            </button>
+            
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                            <i class="bi bi-x-lg"></i>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <iframe width="765" height="430" src="https://www.youtube.com/embed/FkLZ3xs-V5w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- --------------------------------- Virtual Tour End --------------------------------- -->
+
+    <!-- --------------------------------- Career Resource start --------------------------------- -->
+
+    <section id="career_resource" class="section_padding">
+        <div class="container">
+            <div class="row row-reverse">
+                <div class="col-lg-6">
+                    <div class="img_box ml-105" data-aos="fade-up" data-aos-delay="100">
+                        <img src="images/career-services.png" alt="SkillBank Career Services">
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="section_title mb-50">
+                        <p class="text_red mb-16" data-aos="fade-up" data-aos-delay="100">SBAC</p>
+                        <h2 class="heading_one text_blue" data-aos="fade-up" data-aos-delay="300">Career Resources</h2>
+                    </div>
+
+                    <div class="section_links" data-aos="fade-up" data-aos-delay="500">
+                        <ul>
+                            <li><a href="#" class="c_heading">CGPA Calculator</a></li>
+                            <li><a href="#" class="c_heading">Credit Conversion</a></li>
+                            <li><a href="#" class="c_heading">Credit Redemption & Endorsement</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- --------------------------------- Career Resource End --------------------------------- -->
+
+    <!-- --------------------------------- Skill Resource start --------------------------------- -->
+
+    <section id="skill_resource" class="section_padding mb-125">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="section_title mb-50 ml-105">
+                        <p class="text_red mb-16" data-aos="fade-up" data-aos-delay="100">SBAC</p>
+                        <h2 class="heading_one text_blue" data-aos="fade-up" data-aos-delay="300">Skills Resources</h2>
+                    </div>
+
+                    <div class="section_links ml-105" data-aos="fade-up" data-aos-delay="500">
+                        <ul>
+                            <li><a href="#" class="c_heading">Skill Assessment Test</a></li>
+                            <li><a href="#" class="c_heading">Psychometric aptitude test</a></li>
+                            <li><a href="#" class="c_heading">Skills Conversion/Exemption Calculator</a></li>
+                            <li><a href="#" class="c_heading">Skills Audit & Redemption</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="img_box ml-105" data-aos="fade-up" data-aos-delay="100">
+                        <img src="images/skill-resouces.png" alt="SkillBank Career Services">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- --------------------------------- Career Resource End --------------------------------- -->
+
+    <!-- --------------------------------- Join Start --------------------------------- -->
+
+    <section id="join_part">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="join_content" data-aos="fade-up" data-aos-delay="100">
+                        <h6 class="heading_one text_blue">Join SBAC With 20,000 Students</h6>
+
+                        <div class="content_btn">
+                            <a href="#" class="btn_orange">Join Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 join_box">
+                    <div class="join_img">
+                        <img src="images/join-us.png" alt="Join SkillBank">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- --------------------------------- Join End --------------------------------- -->
+
+    <!-- --------------------------------- Partner Start --------------------------------- -->
+
+    <section id="partner_part">
+        <div class="container">
+            <div class="section_title mb-50">
+                <p class="text_red mb-20" data-aos="fade-up" data-aos-delay="100">SBAC</p>
+                <h2 class="heading_one text_blue" data-aos="fade-up" data-aos-delay="300">Our Partners</h2>
+            </div>
+
+            <div class="partner_logo" data-aos="fade-up" data-aos-delay="500">
+                <div class="swiper partner_swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="logo_box">
+                                <img src="images/partner/Zoom.png" alt="zoom">
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="logo_box">
+                                <img src="images/partner/Google.png" alt="Google">
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="logo_box">
+                                <img src="images/partner/slack.png" alt="Slack">
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="logo_box">
+                                <img src="images/partner/stripe.png" alt="Stripe">
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="logo_box">
+                                <img src="images/partner/confluent.png" alt="Confluent">
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="logo_box">
+                                <img src="images/partner/Plaid.png" alt="Plaid">
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="logo_box">
+                                <img src="images/partner/stripe.png" alt="Stripe">
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="logo_box">
+                                <img src="images/partner/Zoom.png" alt="zoom">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- --------------------------------- Partner End --------------------------------- -->
+
+    <!-- --------------------------------- Footer Start --------------------------------- -->
+
+    <footer>
+        <!-- ------------------------------ Return to Top start ------------------------------ -->
+        <a href="javascript:" id="return-to-top">
+            <i class="bi bi-chevron-up"></i>
+        </a>
+        <!-- ------------------------------ Return to Top end ------------------------------ -->
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="footer_logo_text" data-aos="fade-up" data-aos-delay="100">
+                        <div class="f_logo mb-50">
+                            <img src="images/skillbank_logo.png" alt="SkillBank">
+                        </div>
+
+                        <div class="f_text mb-50">
+                            <p class="text_white">A national-level facility to promote the flexibility of the curriculum framework and interdisciplinary academic mobility of students.</p>
+                        </div>
+
+                        <div class="f_copyright">
+                            <p>copyright@Skillbank_2022</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="footer_links" data-aos="fade-up" data-aos-delay="300">
+                        <h6 class="footer_title mb-50 text_white">Featured Links</h6>
+                        <ul>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Terms Of Use</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="footer_social" data-aos="fade-up" data-aos-delay="500">
+                        <h6 class="footer_title mb-50">Social Links</h6>
+
+                        <div class="social_box">
+                            <ul>
+                                <li><a href="#"><i class="bi bi-facebook"></i></a></li>
+                                <li><a href="#"><i class="bi bi-linkedin"></i></a></li>
+                                <li><a href="#"><i class="bi bi-twitter"></i></a></li>
+                                <li><a href="#"><i class="bi bi-youtube"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- --------------------------------- Footer End --------------------------------- -->
+    
+
+    <script src="js/jquery-1.12.4.min.js"></script>
+
+    <script>
+        // ===== Return to Top ==== 
+        $(window).scroll(function() {
+            if ($(this).scrollTop() >= 200) {        // If page is scrolled more than 200px
+                $('#return-to-top').fadeIn(200);    // Fade in the arrow
+            } else {
+                $('#return-to-top').fadeOut(200);   // Else fade out the arrow
+            }
+        });
+
+        $('#return-to-top').click(function() {      // When arrow is clicked
+            $('body,html').animate({
+                scrollTop : 0                       // Scroll to top of body
+            }, 500);
+        });
+    </script>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
