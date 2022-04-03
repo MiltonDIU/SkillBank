@@ -41,4 +41,8 @@ class Social extends Model
     {
         return $date->format('Y-m-d H:i:s');
     }
+
+    public static function links(){
+        return Social::where('is_active','1')->get();
+    }
 }

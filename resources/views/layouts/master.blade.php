@@ -162,10 +162,9 @@
 
                     <div class="social_box">
                         <ul>
-                            <li><a href="#"><i class="bi bi-facebook"></i></a></li>
-                            <li><a href="#"><i class="bi bi-linkedin"></i></a></li>
-                            <li><a href="#"><i class="bi bi-twitter"></i></a></li>
-                            <li><a href="#"><i class="bi bi-youtube"></i></a></li>
+@foreach(\App\Models\Social::links() as $link)
+                            <li><a href="{{$link->url}}" target="_blank"><i class="{{$link->icon_class_name}}"></i></a></li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>

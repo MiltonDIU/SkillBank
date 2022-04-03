@@ -99,53 +99,18 @@
             <div class="partner_logo" data-aos="fade-up" data-aos-delay="500">
                 <div class="swiper partner_swiper">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="logo_box">
-                                <img src="{{ url('assets/theme/images/partner/Zoom.png') }}" alt="zoom">
-                            </div>
-                        </div>
 
-                        <div class="swiper-slide">
-                            <div class="logo_box">
-                                <img src="{{ url('assets/theme/images/partner/Google.png') }}" alt="Google">
-                            </div>
-                        </div>
+                        @foreach($partners as $partner)
+                            @if($partner->partner_logo!=null)
+                                <div class="swiper-slide">
+                                    <div class="logo_box">
+                                        <img src="{{ $partner->partner_logo->getUrl() }}" alt="{{$partner->title}}">
+                                    </div>
+                                </div>
+                            @endif
+                        @endforeach
 
-                        <div class="swiper-slide">
-                            <div class="logo_box">
-                                <img src="{{ url('assets/theme/images/partner/slack.png') }}" alt="Slack">
-                            </div>
-                        </div>
 
-                        <div class="swiper-slide">
-                            <div class="logo_box">
-                                <img src="{{ url('assets/theme/images/partner/stripe.png') }}" alt="Stripe">
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="logo_box">
-                                <img src="{{ url('assets/theme/images/partner/confluent.png') }}" alt="Confluent">
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="logo_box">
-                                <img src="{{ url('assets/theme/images/partner/Plaid.png') }}" alt="Plaid">
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="logo_box">
-                                <img src="{{ url('assets/theme/images/partner/stripe.png') }}" alt="Stripe">
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide">
-                            <div class="logo_box">
-                                <img src="{{ url('assets/theme/images/partner/Zoom.png') }}" alt="zoom">
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
