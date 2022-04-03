@@ -23,9 +23,9 @@ class FrontendController extends Controller
         return view('theme.home',compact('sliders','about','service','career_resource_menu','skill_resource_menu'));
     }
 
-    public function aToZ(){
-        $category =  LinkCategory::with('linkCategoryLinks')->where('id',12)->first();
-        return view('theme.a-to-z',compact('category'));
+    public function articleDetails($id,$slug){
+       $article = Article::where('menu_id',$id)->first();
+        return view('theme.article-details',compact('article'));
     }
 
 

@@ -85,10 +85,12 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav">
 
+
                     @foreach(\App\Models\Position::positionWiseRootMenu(2) as $key => $m)
 
                     <li class="nav-item {{\App\Models\Menu::parent($m->id)!=false?"dropdown":""}}">
-                        <a class="nav-link" aria-current="page" href="#">  {{ $m->title }}</a>
+
+                        <a class="nav-link" aria-current="page" href="">  {{ $m->title }}</a>
 
                         @if($m->id!=0)
                             @if(\App\Models\Menu::parent($m->id)!=false)
