@@ -193,49 +193,89 @@ class PermissionsTableSeeder extends Seeder
 //                'id'    => 46,
 //                'title' => 'menu_management_access',
 //            ],
+//            [
+//                'id'    => 47,
+//                'title' => 'article_management_access',
+//            ],
+//            [
+//                'id'    => 48,
+//                'title' => 'article_category_create',
+//            ],
+//            [
+//                'id'    => 49,
+//                'title' => 'article_category_edit',
+//            ],
+//            [
+//                'id'    => 50,
+//                'title' => 'article_category_show',
+//            ],
+//            [
+//                'id'    => 51,
+//                'title' => 'article_category_delete',
+//            ],
+//            [
+//                'id'    => 52,
+//                'title' => 'article_category_access',
+//            ],
+//            [
+//                'id'    => 53,
+//                'title' => 'article_create',
+//            ],
+//            [
+//                'id'    => 54,
+//                'title' => 'article_edit',
+//            ],
+//            [
+//                'id'    => 55,
+//                'title' => 'article_show',
+//            ],
+//            [
+//                'id'    => 56,
+//                'title' => 'article_delete',
+//            ],
+//            [
+//                'id'    => 57,
+//                'title' => 'article_access',
+//            ],
             [
-                'id'    => 47,
-                'title' => 'article_management_access',
+                'id'    => 58,
+                'title' => 'partner_create',
             ],
             [
-                'id'    => 48,
-                'title' => 'article_category_create',
+                'id'    => 59,
+                'title' => 'partner_edit',
             ],
             [
-                'id'    => 49,
-                'title' => 'article_category_edit',
+                'id'    => 60,
+                'title' => 'partner_show',
             ],
             [
-                'id'    => 50,
-                'title' => 'article_category_show',
+                'id'    => 61,
+                'title' => 'partner_delete',
             ],
             [
-                'id'    => 51,
-                'title' => 'article_category_delete',
+                'id'    => 62,
+                'title' => 'partner_access',
             ],
             [
-                'id'    => 52,
-                'title' => 'article_category_access',
+                'id'    => 63,
+                'title' => 'social_create',
             ],
             [
-                'id'    => 53,
-                'title' => 'article_create',
+                'id'    => 64,
+                'title' => 'social_edit',
             ],
             [
-                'id'    => 54,
-                'title' => 'article_edit',
+                'id'    => 65,
+                'title' => 'social_show',
             ],
             [
-                'id'    => 55,
-                'title' => 'article_show',
+                'id'    => 66,
+                'title' => 'social_delete',
             ],
             [
-                'id'    => 56,
-                'title' => 'article_delete',
-            ],
-            [
-                'id'    => 57,
-                'title' => 'article_access',
+                'id'    => 67,
+                'title' => 'social_access',
             ],
         ];
 

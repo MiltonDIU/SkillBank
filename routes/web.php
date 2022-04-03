@@ -17,6 +17,8 @@ use App\Http\Controllers\Admin\PositionController;
 use App\Http\Controllers\Admin\MenusController;
 use App\Http\Controllers\Admin\ArticleCategoryController;
 use App\Http\Controllers\Admin\ArticlesController;
+use App\Http\Controllers\Admin\SocialsController;
+use App\Http\Controllers\Admin\PartnersController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -55,7 +57,19 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth']], 
         'menus' => MenusController::class,
         'article-categories' => ArticleCategoryController::class,
         'articles' => ArticlesController::class,
+        'partners' => PartnersController::class,
+        'socials' => SocialsController::class,
     ]);
+
+    // Partners
+    Route::delete('partners/destroy', [PartnersController::class, 'massDestroy'])->name('partners.massDestroy');
+    Route::post('partners/media', [PartnersController::class, 'storeMedia'])->name('partners.storeMedia');
+    Route::post('partners/ckmedia', [PartnersController::class, 'storeCKEditorImages'])->name('partners.storeCKEditorImages');
+
+    // Socials
+    Route::delete('socials/destroy', [SocialsController::class, 'massDestroy'])->name('socials.massDestroy');
+
+
 
     // Article Category
     Route::delete('article-categories/destroy', [ArticleCategoryController::class, 'massDestroy'])->name('article-categories.massDestroy');

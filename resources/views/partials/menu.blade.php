@@ -142,6 +142,26 @@
                 </a>
             </li>
         @endcan
+        @can('partner_access')
+            <li class="c-sidebar-nav-item">
+                <a href="{{ route("admin.partners.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/partners") || request()->is("admin/partners/*") ? "c-active" : "" }}">
+                    <i class="fa-fw fas fa-cogs c-sidebar-nav-icon">
+
+                    </i>
+                    {{ trans('cruds.partner.title') }}
+                </a>
+            </li>
+        @endcan
+        @can('social_access')
+            <li class="c-sidebar-nav-item">
+                <a href="{{ route("admin.socials.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/socials") || request()->is("admin/socials/*") ? "c-active" : "" }}">
+                    <i class="fa-fw fas fa-cogs c-sidebar-nav-icon">
+
+                    </i>
+                    {{ trans('cruds.social.title') }}
+                </a>
+            </li>
+        @endcan
         @can('profile_access')
             <li class="c-sidebar-nav-item">
                 <a href="{{ route("admin.profiles.index") }}" class="c-sidebar-nav-link {{ request()->is("admin.profiles") || request()->is("admin.profiles/*") ? "c-active" : "" }}">
