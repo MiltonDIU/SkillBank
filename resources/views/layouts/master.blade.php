@@ -203,7 +203,7 @@
                     </div>
 
                     <div class="f_text mb-50">
-                        <p class="text_white">A national-level facility to promote the flexibility of the curriculum framework and interdisciplinary academic mobility of students.</p>
+                        <p class="text_white">{!! Site::config()->about_in_footer??'A national-level facility to promote the flexibility of the curriculum framework and interdisciplinary academic mobility of students.' !!} </p>
                     </div>
 
                     <div class="f_copyright">

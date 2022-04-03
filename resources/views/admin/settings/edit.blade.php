@@ -76,6 +76,18 @@
                     </div>
 
                     <div class="form-group col-md-12">
+                        <label for="about">Footer About Summery</label>
+                        <textarea class="form-control  {{ $errors->has('about_in_footer') ? 'is-invalid' : '' }}" name="about_in_footer" id="about_in_footer">{!! old('about_in_footer', $setting?$setting->about_in_footer:'') !!}</textarea>
+                        @if($errors->has('about_in_footer'))
+                            <div class="invalid-feedback">
+                                {{ $errors->first('about_in_footer') }}
+                            </div>
+                        @endif
+                        <span class="help-block">{{ trans('cruds.setting.fields.about_helper') }}</span>
+                    </div>
+
+
+                    <div class="form-group col-md-12">
                     <label for="address">{{ trans('cruds.setting.fields.address') }}</label>
                     <textarea class="form-control ckeditor {{ $errors->has('address') ? 'is-invalid' : '' }}" name="address" id="address">{!! old('address', $setting?$setting->address:'') !!}</textarea>
                     @if($errors->has('address'))
