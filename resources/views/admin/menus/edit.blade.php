@@ -70,7 +70,7 @@
                     @endif
                     <span class="help-block">{{ trans('cruds.menu.fields.link_type_helper') }}</span>
                 </div>
-                <div class="form-group">
+                <div class="orm-group 1 depend-on-link-type">
                     <label for="external_link">{{ trans('cruds.menu.fields.external_link') }}</label>
                     <input class="form-control {{ $errors->has('external_link') ? 'is-invalid' : '' }}" type="text" name="external_link" id="external_link" value="{{ old('external_link', $menu->external_link) }}">
                     @if($errors->has('external_link'))
@@ -80,6 +80,21 @@
                     @endif
                     <span class="help-block">{{ trans('cruds.menu.fields.external_link_helper') }}</span>
                 </div>
+                <div class="orm-group 2 depend-on-link-type">
+                    <label for="menu_id">{{ trans('cruds.article.title_singular') }}</label>
+                    <select class="form-control select2 {{ $errors->has('menu') ? 'is-invalid' : '' }}" name="article_id" id="article_id">
+
+                        @foreach($articles as $key => $article)
+                            <option value="{{ $article->id }}" {{ $article->menu_id!=null?$article->menu_id==$menu->id?'selected' : '':'' }}>{{ $article->title }}</option>
+                        @endforeach
+                    </select>
+                    @if($errors->has('article_id'))
+                        <div class="invalid-feedback">
+                            {{ $errors->first('article_id') }}
+                        </div>
+                    @endif
+                </div>
+
                 <div class="form-group">
                     <label for="serial">{{ trans('cruds.menu.fields.serial') }}</label>
                     <input class="form-control {{ $errors->has('serial') ? 'is-invalid' : '' }}" type="number" name="serial" id="serial" value="{{ old('serial', $menu->serial) }}" step="1">
@@ -136,3 +151,21 @@
 
 
 @endsection
+@push('script')
+
+    <script>
+        $(document).ready(function(){
+            $("#link_type").change(function(){
+                $(this).find("option:selected").each(function(){
+                    var optionValue = $(this).attr("value");
+                    if(optionValue){
+                        $(".depend-on-link-type").not("." + optionValue).hide();
+                        $("." + optionValue).show();
+                    } else{
+                        $(".depend-on-link-type").hide();
+                    }
+                });
+            }).change();
+        });
+    </script>
+@endpush

@@ -107,6 +107,13 @@ class ArticlesController extends Controller
     public function store(StoreArticleRequest $request)
     {
         $article = Article::create($request->all());
+        if ($request->input('menu_id')!=null){
+            $menu = Menu::find($request->input('menu_id'));
+            $data['external_link']=null;
+            $data['link_type']=2;
+            $menu->update($data);
+        }
+
         $article->categories()->sync($request->input('categories', []));
         if ($request->input('feature_image', false)) {
             $article->addMedia(storage_path('tmp/uploads/' . basename($request->input('feature_image'))))->toMediaCollection('feature_image');
@@ -134,7 +141,14 @@ class ArticlesController extends Controller
 
     public function update(UpdateArticleRequest $request, Article $article)
     {
+
         $article->update($request->all());
+        if ($request->input('menu_id')!=null){
+            $menu = Menu::find($request->input('menu_id'));
+            $data['external_link']=null;
+            $data['link_type']=2;
+            $menu->update($data);
+        }
         $article->categories()->sync($request->input('categories', []));
         if ($request->input('feature_image', false)) {
             if (!$article->feature_image || $request->input('feature_image') !== $article->feature_image->file_name) {

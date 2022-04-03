@@ -28,7 +28,7 @@ use App\Http\Controllers\Admin\ArticlesController;
 |
 */
 
-Route::get('/', [FrontendController::class,'index'])->name('home');;
+
 //after login
 
 Route::get('/home', function () {
@@ -122,3 +122,8 @@ Route::group(['prefix' => 'profile', 'as' => 'profile.', 'namespace' => 'Auth', 
 Route::post('settings/media', 'SettingsController@storeMedia')->name('settings.storeMedia');
 Route::post('settings/ckmedia', 'SettingsController@storeCKEditorImages')->name('settings.storeCKEditorImages');
 Route::resource('settings', 'SettingsController', ['except' => ['create', 'store', 'show', 'destroy']]);
+
+
+//frontend route list
+Route::get('/', [FrontendController::class,'index'])->name('home');;
+Route::get('/{id}/{slug}', [FrontendController::class,'articleDetails'])->name('article-details');

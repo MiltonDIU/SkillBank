@@ -71,7 +71,6 @@ class Article extends Model implements HasMedia
     {
         return $this->belongsToMany(ArticleCategory::class);
     }
-
     public function menu()
     {
         return $this->belongsTo(Menu::class, 'menu_id');

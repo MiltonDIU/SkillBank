@@ -47,7 +47,7 @@ class Menu extends Model
 
     public function menuArticles()
     {
-        return $this->hasMany(Article::class, 'menu_id', 'id');
+        return $this->hasOne(Article::class, 'menu_id', 'id');
     }
 
     public function positions()

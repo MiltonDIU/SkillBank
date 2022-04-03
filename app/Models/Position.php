@@ -76,16 +76,12 @@ class Position extends Model implements HasMedia
         return $date->format('Y-m-d H:i:s');
     }
     public static function positionWiseMenu($id){
-
         $position = Position::find($id);
         return $position->positionMenus;
-
     }
 
     public static function positionWiseRootMenu($id){
-
         $position = Position::find($id);
         return $position->positionRootMenus;
-
     }
 }

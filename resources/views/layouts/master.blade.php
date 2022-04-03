@@ -105,79 +105,6 @@
 
                     </li>
                     @endforeach
-
-
-
-
-{{--                <li class="nav-item">--}}
-{{--                    <a class="nav-link" aria-current="page" href="index.html">Home</a>--}}
-{{--                </li>--}}
-
-{{--                <li class="nav-item dropdown">--}}
-{{--                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">--}}
-{{--                        About Us--}}
-{{--                    </a>--}}
-{{--                    <ul class="dropdown-menu dropdown-menu-start" aria-labelledby="navbarDropdown">--}}
-{{--                        <li><a class="dropdown-item item-one" href="#">Preface and Overview</a></li>--}}
-{{--                    </ul>--}}
-{{--                </li>--}}
-
-{{--                <li class="nav-item dropdown">--}}
-{{--                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">--}}
-{{--                        Services--}}
-{{--                    </a>--}}
-{{--                    <ul class="dropdown-menu dropdown-menu-start" aria-labelledby="navbarDropdown">--}}
-{{--                        <li><a class="dropdown-item" href="#">Features</a></li>--}}
-{{--                        <li><a class="dropdown-item" href="#">Benefits</a></li>--}}
-{{--                        <li><a class="dropdown-item" href="#">Process</a></li>--}}
-{{--                    </ul>--}}
-{{--                </li>--}}
-
-{{--                <li class="nav-item dropdown">--}}
-{{--                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">--}}
-{{--                        Operation Framework--}}
-{{--                    </a>--}}
-{{--                    <ul class="dropdown-menu dropdown-menu-start" aria-labelledby="navbarDropdown">--}}
-{{--                        <li><a class="dropdown-item" href="#">Credit Conversion</a></li>--}}
-{{--                        <li><a class="dropdown-item" href="#">Credit Exemptions</a></li>--}}
-{{--                        <li><a class="dropdown-item" href="#">Credit Transfer/Replacement</a></li>--}}
-{{--                        <li><a class="dropdown-item" href="#">Credit Equivalence</a></li>--}}
-{{--                        <li><a class="dropdown-item" href="#">Skill Audit and Redemption</a></li>--}}
-{{--                        <li><a class="dropdown-item" href="#">Skill Endorsement</a></li>--}}
-{{--                        <li><a class="dropdown-item" href="#">Skill Authenticate</a></li>--}}
-{{--                    </ul>--}}
-{{--                </li>--}}
-
-{{--                <li class="nav-item dropdown">--}}
-{{--                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">--}}
-{{--                        Resources & Applications--}}
-{{--                    </a>--}}
-{{--                    <ul class="dropdown-menu dropdown-menu-start" aria-labelledby="navbarDropdown">--}}
-{{--                        <li><a class="dropdown-item" href="#">General Resources</a></li>--}}
-{{--                        <li><a class="dropdown-item" href="#">Credit Templates & Guideline</a></li>--}}
-{{--                        <li><a class="dropdown-item" href="#">Career Resources</a></li>--}}
-{{--                        <li><a class="dropdown-item" href="#">Skill Resources</a></li>--}}
-{{--                        <li><a class="dropdown-item" href="#">Data Definition Document</a></li>--}}
-{{--                        <li><a class="dropdown-item" href="#">Mobile Apps</a></li>--}}
-{{--                    </ul>--}}
-{{--                </li>--}}
-
-{{--                <li class="nav-item dropdown">--}}
-{{--                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">--}}
-{{--                        Career Essentials--}}
-{{--                    </a>--}}
-{{--                    <ul class="dropdown-menu dropdown-menu-start" aria-labelledby="navbarDropdown">--}}
-{{--                        <li><a class="dropdown-item" href="#">Technical & Vocational</a></li>--}}
-{{--                        <li><a class="dropdown-item" href="#">HE Institutions</a></li>--}}
-{{--                        <li><a class="dropdown-item" href="#">Professional & Ventor Certifications</a></li>--}}
-{{--                        <li><a class="dropdown-item" href="#">Local & International Industries</a></li>--}}
-{{--                        <li><a class="dropdown-item" href="#">SKills Framework</a></li>--}}
-{{--                    </ul>--}}
-{{--                </li>--}}
-
-{{--                <li class="nav-item">--}}
-{{--                    <a class="nav-link" href="#">Contact Us</a>--}}
-{{--                </li>--}}
             </ul>
         </div>
     </div>
@@ -216,10 +143,13 @@
                 <div class="footer_links" data-aos="fade-up" data-aos-delay="300">
                     <h6 class="footer_title mb-50 text_white">Featured Links</h6>
                     <ul>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Terms Of Use</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Contact Us</a></li>
+                        @foreach(\App\Models\Position::positionWiseMenu(3) as $menu)
+                            @if($menu->link_type=='1')
+                            <li><a href="{{$menu->external_link}}" target="_blank">{{$menu->title}}</a></li>
+                            @else
+                                <li><a href="{{ route('article-details',[$menu->id,$menu->slug]) }}">{{$menu->title}}</a></li>
+                            @endif
+                        @endforeach
                     </ul>
                 </div>
             </div>

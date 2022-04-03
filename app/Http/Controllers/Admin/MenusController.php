@@ -98,8 +98,14 @@ class MenusController extends Controller
     public function store(StoreMenuRequest $request)
     {
        // dd($request);
-
         $menu = Menu::create($request->all());
+        if ($request->input('link_type')=='2'){
+            $data['external_link']=null;
+            $article = Article::find($request->input('article_id'));
+            $adata['menu_id'] =$menu->id;
+            $article->update($adata);
+            $menu->update($data);
+        }
         $menu->positions()->sync($request->input('positions', []));
 
         return redirect()->route('admin.menus.index');
@@ -113,14 +119,25 @@ class MenusController extends Controller
 
         $menu->load('positions');
         $menus = Menu::where('is_active',1)->where('parent',0)->get();
-        return view('admin.menus.edit', compact('menu', 'positions','menus'));
+        $articles = Article::where('is_status','1')->get();
+        return view('admin.menus.edit', compact('menu', 'positions','menus','articles'));
     }
 
     public function update(UpdateMenuRequest $request, Menu $menu)
     {
-        $menu->update($request->all());
-        $menu->positions()->sync($request->input('positions', []));
 
+        $data =$request->all();
+
+        if ($request->input('link_type')=='2'){
+            $data['external_link']=null;
+            $article = Article::find($request->input('article_id'));
+            $adata['menu_id'] =$menu->id;
+            $article->update($adata);
+        }
+
+        $menu->update($data);
+
+        $menu->positions()->sync($request->input('positions', []));
         return redirect()->route('admin.menus.index');
     }
 
