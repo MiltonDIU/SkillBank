@@ -12,7 +12,7 @@
                     @if($article->feature_image!=null)
                         <div class="col-lg-12" data-aos="fade-up" data-aos-delay="300">
                             <div  style="width: 100%; margin: 0 auto" data-aos="fade-up" data-aos-delay="100">
-                                <img src="{{$article->feature_image->getUrl()}}" alt="{{$article->title}}">
+                                <img width="100%" src="{{$article->feature_image->getUrl()}}" alt="{{$article->title}}">
                             </div>
                         </div>
                     @endif

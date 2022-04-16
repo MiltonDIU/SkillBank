@@ -50,9 +50,8 @@ class Position extends Model implements HasMedia
 
     public function positionMenus()
     {
-        return $this->belongsToMany(Menu::class)->orderBy('serial','asc');
+        return $this->belongsToMany(Menu::class)->where('is_active','1')->orderBy('serial','asc');
     }
-
 
     public function positionRootMenus()
     {

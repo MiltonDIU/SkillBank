@@ -29,6 +29,7 @@ class FrontendController extends Controller
 
     public function articleDetails($id,$slug){
        $article = Article::where('menu_id',$id)->first();
+     
         return view('theme.article-details',compact('article'));
     }
 

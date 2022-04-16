@@ -61,7 +61,7 @@ class Menu extends Model
     }
 
 public static function parent($id){
-        $menus = Menu::where('is_active',1)->where('parent',$id)->get();
+        $menus = Menu::where('is_active',1)->where('parent',$id)->orderBy('serial','asc')->get();
         if(count($menus)>0){
             return $menus;
         }else{

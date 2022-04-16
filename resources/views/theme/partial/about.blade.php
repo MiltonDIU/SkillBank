@@ -20,8 +20,8 @@
         <div class="container">
             <div class="row">
 
-               @foreach($about->categoryArticles as $article)
-
+               @foreach($about->categoryArticles as $key=>$article)
+@if($key<3)
                 <div class="col-lg-4" data-aos="fade-up" data-aos-delay="400">
                     <div class="content_box">
                         <div class="content_title mb-50">
@@ -39,7 +39,7 @@
                         </div>
                     </div>
                 </div>
-
+                    @endif
                 @endforeach
 
 

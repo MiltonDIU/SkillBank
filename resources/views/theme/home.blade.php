@@ -78,7 +78,7 @@
 
                 <div class="col-lg-6 join_box">
                     <div class="join_img">
-                        <img src="{{ url('assets/theme/images/join-us.png') }}" alt="Join SkillBank">
+                        <img src="{{ url('assets/theme/images/join-us.webp') }}" alt="Join SkillBank">
                     </div>
                 </div>
             </div>
