@@ -56,3 +56,18 @@
 
 
 @endsection
+
+@push('script')
+    <script>
+        var convertName2Alias = function () {
+            var title = $(this).val().trim().toLowerCase().replace(/\s+/g, '-');
+            var slug = $('#slug').val();
+            if (slug == '') {
+                $('#slug').val(title);
+            }
+        };
+        $(function () {
+            $('#title').on('change', convertName2Alias);
+        });
+    </script>
+@endpush
