@@ -60,7 +60,7 @@
                                         <li><a class="dropdown-item" target="_blank" href="{{$menu->external_link}}">{{$menu->title}}</a></li>
                                     @else
                                         <li>
-                                            <a class="dropdown-item" target="_blank" href="{{ route('article-details',[$menu->id,$menu->slug]) }}">
+                                            <a class="dropdown-item" target="_blank" href="{{ route('article-details',[$menu->slug]) }}">
                                                 {{$menu->title}}
                                             </a>
                                         </li>
@@ -95,7 +95,7 @@
                                    {{$m->title}}
                                 </a>
                         @else
-                                <a class="nav-link dropdown-toggle" href="{{ route('article-details',[$m->id,$m->slug]) }}">
+                                <a class="nav-link dropdown-toggle" href="{{ route('article-details',[$m->slug]) }}">
                                     {{$m->title}}
                                 </a>
 
@@ -116,13 +116,13 @@
                                     {{$m->title}}
                                 </a>
                             @else
-                                <a class="nav-link " href="{{ route('article-details',[$m->id,$m->slug]) }}">
+                                <a class="nav-link " href="{{ route('article-details',[$m->slug]) }}">
                                     {{$m->title}}
                                 </a>
 
                             @endif
 
-                            
+
                         </li>
                     @endif
                 @endforeach
@@ -168,7 +168,7 @@
                             @if($menu->link_type=='1')
                                 <li><a href="{{$menu->external_link}}" target="_blank">{{$menu->title}}</a></li>
                             @else
-                                <li><a href="{{ route('article-details',[$menu->id,$menu->slug]) }}">{{$menu->title}}</a></li>
+                                <li><a href="{{ route('article-details',[$menu->slug]) }}">{{$menu->title}}</a></li>
                             @endif
                         @endforeach
                     </ul>

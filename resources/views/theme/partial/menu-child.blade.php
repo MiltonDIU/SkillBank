@@ -5,7 +5,7 @@
 
             <a class="dropdown-item dropdown-toggle" href="{{$parent->external_link}}"   aria-expanded="false">{{$parent->title}}  </a>
         @else
-            <a class="dropdown-item dropdown-toggle" href="{{ route('article-details',[$parent->id,$parent->slug]) }}"  aria-expanded="false"> {{$parent->title}} </a>
+            <a class="dropdown-item dropdown-toggle" href="{{ route('article-details',[$parent->slug]) }}"  aria-expanded="false"> {{$parent->title}} </a>
 
         @endif
 
