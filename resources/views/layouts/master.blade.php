@@ -30,9 +30,9 @@
             <div class="col-lg-6 xs_header_left">
                 <div class="header_logo">
 
-<a href="{{url('/')}}">
-    <img src="{!! Site::config()->logo!=null?Site::config()->logo->getUrl()??url('assets/theme/images/skillbank_logo.png'):url('assets/theme/images/skillbank_logo.png') !!} " alt="SkillBank">
-</a>
+                    <a href="{{url('/')}}">
+                        <img src="{!! Site::config()->logo!=null?Site::config()->logo->getUrl()??url('assets/theme/images/skillbank_logo.png'):url('assets/theme/images/skillbank_logo.png') !!} " alt="SkillBank">
+                    </a>
 
                 </div>
             </div>
@@ -49,19 +49,21 @@
 
                     <div class="header_btn">
                         <div class="dropdown">
+
                             <a class="btn_light dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="bi bi-grid-fill"></i>
                             </a>
 
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-@foreach(\App\Models\Position::positionWiseMenu(1) as $menu)
-    @if($menu->link_type=='1')
-                                <li><a class="dropdown-item" target="_blank" href="{{$menu->external_link}}">{{$menu->title}}</a></li>
+                                @foreach(\App\Models\Position::positionWiseMenu(1) as $menu)
+                                    @if($menu->link_type=='1')
+                                        <li><a class="dropdown-item" target="_blank" href="{{$menu->external_link}}">{{$menu->title}}</a></li>
                                     @else
                                         <li>
-                                            <a class="dropdown-item" target="_blank" href="{{ url($menu->slug) }}">
-                                                </a>
-                                                </li>
+                                            <a class="dropdown-item" target="_blank" href="{{ route('article-details',[$menu->slug]) }}">
+                                                {{$menu->title}}
+                                            </a>
+                                        </li>
                                     @endif
                                 @endforeach
                             </ul>
@@ -84,29 +86,46 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav">
+                @foreach(\App\Models\Position::positionWiseRootMenu(2) as $key => $m)
+                    @if(\App\Models\Menu::parent($m->id)!=false)
+                        <li class="nav-item dropdown">
 
+                        @if($m->link_type=='1')
+                                <a class="nav-link dropdown-toggle" href="{{$m->external_link}}"  aria-expanded="false">
+                                   {{$m->title}}
+                                </a>
+                        @else
+                                <a class="nav-link dropdown-toggle" href="{{ route('article-details',[$m->slug]) }}">
+                                    {{$m->title}}
+                                </a>
 
-                    @foreach(\App\Models\Position::positionWiseRootMenu(2) as $key => $m)
+                        @endif
 
-                    <li class="nav-item {{\App\Models\Menu::parent($m->id)!=false?"dropdown":""}}">
-
-                        <a class="nav-link" aria-current="page" href="">  {{ $m->title }}</a>
-
-                        @if($m->id!=0)
-                            @if(\App\Models\Menu::parent($m->id)!=false)
-                                @php
-                                    $i=1;
-                                @endphp
-                                <ul class="dropdown-menu dropdown-menu-start" aria-labelledby="navbarDropdown">
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                 @include('theme.partial.menu-child', [
                                 'childs' => \App\Models\Menu::parent($m->id)
                                 ])
-                                </ul>
-                            @endif
-                        @endif
+                            </ul>
 
-                    </li>
-                    @endforeach
+                        </li>
+                    @else
+                        <li class="nav-item">
+
+                            @if($m->link_type=='1')
+                                <a class="nav-link" href="{{$m->external_link}}">
+                                    {{$m->title}}
+                                </a>
+                            @else
+                                <a class="nav-link " href="{{ route('article-details',[$m->slug]) }}">
+                                    {{$m->title}}
+                                </a>
+
+                            @endif
+
+
+                        </li>
+                    @endif
+                @endforeach
             </ul>
         </div>
     </div>
@@ -147,9 +166,9 @@
                     <ul>
                         @foreach(\App\Models\Position::positionWiseMenu(3) as $menu)
                             @if($menu->link_type=='1')
-                            <li><a href="{{$menu->external_link}}" target="_blank">{{$menu->title}}</a></li>
+                                <li><a href="{{$menu->external_link}}" target="_blank">{{$menu->title}}</a></li>
                             @else
-                                <li><a href="{{ route('article-details',[$menu->id,$menu->slug]) }}">{{$menu->title}}</a></li>
+                                <li><a href="{{ route('article-details',[$menu->slug]) }}">{{$menu->title}}</a></li>
                             @endif
                         @endforeach
                     </ul>
@@ -162,8 +181,8 @@
 
                     <div class="social_box">
                         <ul>
-@foreach(\App\Models\Social::links() as $link)
-                            <li><a href="{{$link->url}}" target="_blank"><i class="{{$link->icon_class_name}}"></i></a></li>
+                            @foreach(\App\Models\Social::links() as $link)
+                                <li><a href="{{$link->url}}" target="_blank"><i class="{{$link->icon_class_name}}"></i></a></li>
                             @endforeach
                         </ul>
                     </div>

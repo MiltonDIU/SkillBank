@@ -139,5 +139,7 @@ Route::resource('settings', 'SettingsController', ['except' => ['create', 'store
 
 
 //frontend route list
-Route::get('/', [FrontendController::class,'index'])->name('home');;
-Route::get('/{id}/{slug}', [FrontendController::class,'articleDetails'])->name('article-details');
+Route::get('/', [FrontendController::class,'index'])->name('home');
+Route::get('/404', [FrontendController::class,'error404'])->name('error404');
+Route::get('/{slug}', [FrontendController::class,'articleDetails'])->name('article-details');
+

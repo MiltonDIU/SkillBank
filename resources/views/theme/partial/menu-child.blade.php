@@ -1,19 +1,20 @@
 @foreach($childs as $key=> $parent)
     <li>
-{{--        {{\App\Models\Menu::parent($parent->id)!=false?count(\App\Models\Menu::parent($parent->id))==1?"item-one":"":""}}--}}
-        <a class="dropdown-item" href="#">
-        {{ $parent->title }}
-        @if(\App\Models\Menu::parent($parent->id)!=false)
-            @php
-                $i+=1;
-            @endphp
-                <ul class="dropdown-menu dropdown-menu-start" aria-labelledby="navbarDropdown">
-            @include('partials.chield-menu', [
-                                     'childs' => \App\Models\Menu::parent($parent->id)
-                                 ])
-                </ul>
+
+        @if($parent->link_type=='1')
+
+            <a class="dropdown-item dropdown-toggle" href="{{$parent->external_link}}"   aria-expanded="false">{{$parent->title}}  </a>
+        @else
+            <a class="dropdown-item dropdown-toggle" href="{{ route('article-details',[$parent->slug]) }}"  aria-expanded="false"> {{$parent->title}} </a>
 
         @endif
-     </a>
+
+        <ul class="dropdown-submenu dropdown-submenu-left" aria-labelledby="navbarSubDropdown">
+            @if(\App\Models\Menu::parent($parent->id)!=false)
+                @include('theme.partial.menu-child', [
+                'childs' => \App\Models\Menu::parent($parent->id)
+                ])
+            @endif
+        </ul>
     </li>
 @endforeach

@@ -53,28 +53,6 @@
                     <span class="help-block">{{ trans('cruds.user.fields.approved_helper') }}</span>
                 </div>
 
-
-                <div class="form-group">
-                    <label class="required">If Yes then user massage get this user</label>
-
-                    @foreach(App\Models\FeedbackCategory::IS_ACTIVE_RADIO as $key => $label)
-                        <div class="form-check {{ $errors->has('if_admin_message') ? 'is-invalid' : '' }}">
-                            <input class="form-check-input" type="radio" id="if_admin_message{{ $key }}" name="if_admin_message" value="{{ $key }}" {{ old('if_admin_message', '1') === (string) $key ? 'checked' : '' }} required>
-                            <label class="form-check-label" for="if_admin_message_{{ $key }}">{{ $label }}</label>
-                        </div>
-                    @endforeach
-                    @if($errors->has('is_active'))
-                        <div class="invalid-feedback">
-                            {{ $errors->first('is_active') }}
-                        </div>
-                    @endif
-                    <span class="help-block">{{ trans('cruds.feedbackCategory.fields.is_active_helper') }}</span>
-                </div>
-
-
-
-
-
                 <div class="form-group">
                     <label class="required" for="roles">{{ trans('cruds.user.fields.roles') }}</label>
                     <div style="padding-bottom: 4px">

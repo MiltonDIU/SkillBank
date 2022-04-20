@@ -68,17 +68,17 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="join_content" data-aos="fade-up" data-aos-delay="100">
-                        <h6 class="heading_one text_blue">Join SBAC With 20,000 Students</h6>
+                        <h6 class="heading_one text_white">Join SBAC With 20,000 Students</h6>
 
                         <div class="content_btn">
-                            <a href="http://192.53.117.239:8069/web/login" target="_blank" class="btn_orange">Join Now</a>
+                            <a href="http://192.53.117.239:8069/web/login" target="_blank" class="btn_red">Join Now</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-lg-6 join_box">
                     <div class="join_img">
-                        <img src="{{ url('assets/theme/images/join-us.png') }}" alt="Join SkillBank">
+                        <img src="{{ url('assets/theme/images/join-us.webp') }}" alt="Join SkillBank">
                     </div>
                 </div>
             </div>

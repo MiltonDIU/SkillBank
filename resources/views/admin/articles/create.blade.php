@@ -201,7 +201,7 @@
         Dropzone.options.featureImageDropzone = {
             url: '{{ route('admin.articles.storeMedia') }}',
             maxFilesize: 2, // MB
-            acceptedFiles: '.jpeg,.jpg,.png,.gif',
+            acceptedFiles: '.jpeg,.jpg,.png,.gif,.webp',
             maxFiles: 1,
             addRemoveLinks: true,
             headers: {
@@ -250,5 +250,15 @@
                 return _results
             }
         }
+        var convertName2Alias = function () {
+            var title = $(this).val().trim().toLowerCase().replace(/\s+/g, '-');
+            var slug = $('#slug').val();
+            if (slug == '') {
+                $('#slug').val(title);
+            }
+        };
+        $(function () {
+            $('#title').on('change', convertName2Alias);
+        });
     </script>
 @endsection

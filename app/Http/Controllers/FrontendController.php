@@ -27,11 +27,18 @@ class FrontendController extends Controller
         return view('theme.home',compact('sliders','about','service','career_resource_menu','skill_resource_menu','partners','socials'));
     }
 
-    public function articleDetails($id,$slug){
-       $article = Article::where('menu_id',$id)->first();
+public function articleDetails($slug){
+    $menu = Menu::where('slug',$slug)->first();
+
+    if ($menu!=null){
+        $article = Article::where('menu_id',$menu->id)->first();
         return view('theme.article-details',compact('article'));
+    }else{
+        return redirect(route('error404'));
     }
+}
 
-
-
+public function error404(){
+    return view('theme.404');
+}
 }

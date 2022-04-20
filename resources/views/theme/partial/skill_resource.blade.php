@@ -10,7 +10,11 @@
                 <div class="section_links ml-105" data-aos="fade-up" data-aos-delay="500">
                     <ul>
                         @foreach($skill_resource_menu->positionMenus as $menu)
-                            <li><a href="#" class="c_heading">{{$menu->title}}</a></li>
+                            @if($menu->link_type=='1')
+                                <li><a href="{{$menu->external_link}}" class="c_heading" target="_blank">{{$menu->title}}</a></li>
+                            @else
+                                <li><a href="{{ route('article-details',[$menu->slug]) }}" class="c_heading">{{$menu->title}}</a></li>
+                            @endif
                         @endforeach
                     </ul>
                 </div>

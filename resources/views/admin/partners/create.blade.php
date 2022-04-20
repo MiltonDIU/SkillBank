@@ -73,7 +73,7 @@
         Dropzone.options.partnerLogoDropzone = {
             url: '{{ route('admin.partners.storeMedia') }}',
             maxFilesize: 1, // MB
-            acceptedFiles: '.jpeg,.jpg,.png,.gif',
+             acceptedFiles: '.jpeg,.jpg,.png,.gif,.webp',
             maxFiles: 1,
             addRemoveLinks: true,
             headers: {
