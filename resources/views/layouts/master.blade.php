@@ -147,7 +147,11 @@
             <div class="col-lg-4">
                 <div class="footer_logo_text" data-aos="fade-up" data-aos-delay="100">
                     <div class="f_logo mb-50">
-                        <img src="{!! Site::config()->logo!=null?Site::config()->logo->getUrl()??url('assets/theme/images/skillbank_logo.png'):url('assets/theme/images/skillbank_logo.png') !!} " alt="SkillBank">
+{{--                        <img src="{!! Site::config()->logo!=null?Site::config()->logo->getUrl()??url('assets/theme/images/skillbank_logo.png'):url('assets/theme/images/skillbank_logo.png') !!} " alt="SkillBank">--}}
+
+
+                        <img src="{{ url('assets/theme/images/skillbank-logo-white.png') }}" alt="SkillBank">
+
                     </div>
 
                     <div class="f_text mb-50">
