@@ -132,10 +132,7 @@ class ArticlesController extends Controller
 
         $categories = ArticleCategory::pluck('title', 'id');
 
-        $menus = Menu::with('menuArticles')->whereHas('articles', function ($query) {
-                $query->whereIn('menu_id','=',$query->id);
-            })
-            ->prepend(trans('global.pleaseSelect'), '');
+        $menus = Menu::pluck('title','id')->prepend(trans('global.preaseSelect'), '');
 
         $article->load('categories', 'menu');
 

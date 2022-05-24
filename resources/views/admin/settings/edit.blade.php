@@ -11,7 +11,7 @@
                 @method('PUT')
                 @csrf
                 <div class="row">
-                <div class="form-group col-md-6">
+                <div class="form-group col-md-4">
                     <label class="required" for="logo">{{ trans('cruds.setting.fields.logo') }}</label>
                     <div class="needsclick dropzone {{ $errors->has('logo') ? 'is-invalid' : '' }}" id="logo-dropzone">
                     </div>
@@ -23,7 +23,20 @@
                     <span class="help-block">{{ trans('cruds.setting.fields.logo_helper') }}</span>
                 </div>
 
-                <div class="form-group col-md-6">
+                    <div class="form-group col-md-4">
+                        <label class="required" for="footer_logo">{{ trans('cruds.setting.fields.footer_logo') }}</label>
+                        <div class="needsclick dropzone {{ $errors->has('footer_logo') ? 'is-invalid' : '' }}" id="footer_logo-dropzone">
+                        </div>
+                        @if($errors->has('footer_logo'))
+                            <div class="invalid-feedback">
+                                {{ $errors->first('footer_logo') }}
+                            </div>
+                        @endif
+                        <span class="help-block">{{ trans('cruds.setting.fields.footer_logo_helper') }}</span>
+                    </div>
+
+
+                <div class="form-group col-md-4">
                     <label for="favicon">{{ trans('cruds.setting.fields.favicon') }}</label>
                     <div class="needsclick dropzone {{ $errors->has('favicon') ? 'is-invalid' : '' }}" id="favicon-dropzone">
                     </div>

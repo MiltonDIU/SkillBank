@@ -54,6 +54,7 @@ class Setting extends Model implements HasMedia
         'about',
         'admin_approval',
         'about_in_footer',
+        'footer_logo',
         'created_at',
         'updated_at',
         'deleted_at',
